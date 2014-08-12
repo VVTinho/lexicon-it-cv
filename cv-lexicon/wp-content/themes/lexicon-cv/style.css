@@ -1,0 +1,469 @@
+/*
+    Theme Name: Lexicon-IT / CV Theme
+    Theme URI: http://www.lexiconitkonsult.se
+    Description: CV-bank
+    Author: Vladimir | Daniel Elfgren
+    Author URI: http://vvt-mediadesign.se | http://create-media.se
+    Template: twentyfourteen
+    Version: 1.0
+*/
+
+@import url(../twentyfourteen/style.css);
+
+
+/* = General layout
+-------------------------------------------------------------- */
+body {
+    background: #ffffff;
+	color: #231f20;
+}
+body,
+button,
+input,
+select,
+textarea,
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+}
+.site {
+    background-color: #FFFFFF;
+    max-width: 100%;
+    position: relative;
+}
+.full-width .site-content,
+.site-content {
+    margin: 0 auto;
+    max-width: 800px;
+    padding-bottom: 100px;
+}
+a {
+    color: #ed1c24;
+    text-decoration: none;
+}
+a:hover {
+    color: #ed1c24;
+}
+
+/* = Home
+-------------------------------------------------------------- */
+.home h1 {
+    font-size: 36px;
+    font-weight: 700;
+}
+.home h2 {
+    color: #9D9D9D;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0.6em 0 2em;
+}
+.home #content {
+    text-align: center;
+}
+.desc-block {
+    color: #9D9D9D;
+    font-style: italic;
+    margin: 50px 0 40px;
+    text-align: center;
+}
+.home .btn {
+    margin: 0 20px;
+}
+
+/* = Buttons
+-------------------------------------------------------------- */
+a.btn,
+button,
+.button {
+	border: 1px solid #ed1c24;
+    display: inline-block;
+    padding: 2px;
+	text-align: center;
+	background: #FFFFFF;
+    color: #231f20;
+}
+a.btn:hover,
+button:hover,
+.button:hover {
+	border: 1px solid #ed1c24;
+	background: #ed1c24;
+    color: #FFFFFF;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+a.btn span,
+button span,
+.button span {
+    border: 1px solid #ed1c24;
+    display: block;
+    font-size: 16px;
+    height: 58px;
+    letter-spacing: 2px;
+    line-height: 58px;
+	width: 300px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+a.btn:hover span,
+button:hover span,
+.button:hover span {
+    border: 1px solid #FFFFFF;
+	background: #ed1c24;
+	opacity: 1;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.btn-area {
+    text-align: center;
+}
+button.close-btn {
+	cursor: pointer;
+	color: #231f20;
+}
+button.close-btn:hover {
+
+}
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+
+}
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+
+}
+.acf-button {
+}
+
+/* = Mitt CV
+-------------------------------------------------------------- */
+
+.acf_postbox p.label {
+    color: #ed1c24;
+}
+.acf_postbox p.label label {
+    color: #333333;
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5em;
+    margin: 0 0 3px;
+    padding: 0;
+    vertical-align: text-bottom;
+}
+.acf_postbox .field.required label span.required {
+    color: #CC0000;
+	font-size: 14px;
+}
+#message p {
+	color: #ed1c24;
+	font-style: italic;
+}
+.acf_postbox .field input[type="text"],
+.acf_postbox .field input[type="number"],
+.acf_postbox .field input[type="password"],
+.acf_postbox .field input[type="email"],
+.acf_postbox .field textarea {
+    margin: 0;
+    resize: none;
+    width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+    color: #2B2B2B;
+    padding: 8px 10px 7px;
+}
+.acf-input-wrap input {
+    height: 40px;
+    margin: 0;
+}
+.acf-input-wrap {
+    overflow: hidden;
+    position: relative;
+	width: 320px;
+}
+.not-logged-in {
+	text-align: center;
+}
+.field {
+	text-align: right;
+}
+.field.field_type-text,
+.field.field_type-repeater,
+.field.field_type-textarea,
+.field.field_type-radio,
+.field.field_type-image,
+.field.field_type-number {
+	text-align: left;
+}
+.page-template-mina-cv-php .acf-form {
+	display: none;
+}
+.page-template-mina-cv-php .close-btn {
+	display: none;
+}
+
+/* = Single - view/edit CV
+-------------------------------------------------------------- */
+.single-post .view-cv {
+	display: none;
+}
+.single-post .view-cv-form {
+
+}
+button.view-cv-btn {
+	display: none;
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+}
+.single-post button.view-cv-btn {
+	display: block;
+}
+
+/* = Header
+-------------------------------------------------------------- */
+.search-toggle {
+    background-color: #ed1c24;
+    cursor: pointer;
+    float: right;
+    height: 47px;
+    margin-right: 0;
+    text-align: center;
+    width: 47px;
+}
+.search-box-wrapper {
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    top: 47px;
+    width: 100%;
+    z-index: 2;
+}
+.search-box {
+    background-color: #ed1c24;
+    padding: 12px;
+}
+.search-toggle:hover,
+.search-toggle.active {
+    background-color: #ed1c24;
+}
+.logged-in-header {
+	float: left;
+}
+.primary-navigation .nav-menu {
+    border-bottom: 0 none;
+    display: block;
+	float: left;
+}
+.site-header {
+    background-color: #231f20;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    z-index: 4;
+}
+.primary-navigation li {
+	float: left;
+    border: 0 none;
+    height: 47px;
+    line-height: 47px;
+    position: relative;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+.primary-navigation a {
+	padding: 0 20px;
+    white-space: nowrap;
+	font-weight: 700;
+	letter-spacing: 1px;
+	border-right: 1px solid #333333;
+}
+#site-header {
+    margin: 0;
+	display: inline;
+}
+.site-title {
+    float: left;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 42px;
+    margin: 0;
+}
+.primary-navigation,
+.menu-primary-menu-container {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+	font-size: 11px;
+	padding-top: 0;
+	float: right;
+	margin: 0;
+	color: rgba(255, 255, 255, 0.7);
+}
+.primary-navigation li:hover > a,
+.primary-navigation li.focus > a {
+	background-color: #ed1c24;
+	color: #fff;
+	-webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.primary-navigation li.user-name {
+	padding: 0 12px;
+	margin-right: 12px;
+	text-transform: none;
+	letter-spacing: 1px;
+}
+.primary-navigation li.user-name span {
+	font-style: italic;
+	color: #FFFFFF;
+	padding-left: 5px;
+}
+.header-main {
+	padding: 0;
+	color: #FFFFFF;
+    min-height: 47px;
+}
+.site-navigation .current_page_item > a,
+.site-navigation .current_page_ancestor > a,
+.site-navigation .current-menu-item > a,
+.site-navigation .current-menu-ancestor > a {
+    color: #FFFFFF;
+    font-weight: 700;
+	background-color: #ed1c24;
+	-webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+/* = Footer
+-------------------------------------------------------------- */
+.site-footer {
+    background-color: #231F20;
+    bottom: 0;
+    font-size: 12px;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+.copyright-lexicon p {
+    font-size: 11px;
+    line-height: 53px;
+    margin: 0;
+    padding: 0;
+}
+#colophon div,
+#colophon span,
+#colophon a {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.site-info {
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 0;
+    text-align: center;
+}
+#footer-facebook {
+    bottom: 16px;
+    display: inline-block;
+    position: fixed;
+    right: 25px;
+}
+
+/* = Remove Side bar
+-------------------------------------------------------------- */
+.site:before {
+    width: 0;
+}
+.site:before {
+    background-color: #000000;
+    content: "";
+    height: 100%;
+    left: 0;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    width: 182px;
+    z-index: 2;
+    display: none;
+}
+.site-content,
+.site-main .widecolumn {
+    margin-left: 0;
+}
+
+::selection {
+	background: #a8d1ff;
+	color: #231f20;
+	text-shadow: none;
+}
+
+/* = Search
+-------------------------------------------------------------- */
+.entry-title a {
+    color: #231f20;
+}
+.entry-title a:hover {
+    color: #ed1c24;
+}
+
+/* = Others
+-------------------------------------------------------------- */
+::-moz-selection {
+	background: #a8d1ff;
+	color: #231f20;
+	text-shadow: none;
+}
+.entry-content,
+.entry-summary,
+.page-content {
+    word-wrap: normal;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+    -ms-hyphens: none;
+	hyphens: none;
+}
+
+/* = Kopiera post
+-------------------------------------------------------------- */
+#wp-admin-bar-new_draft {
+
+}
+
+.ab-item {
+
+}
+
+.radera-cv {
+    display: block;
+    font-size: 16px;
+    height: 23px;
+    letter-spacing: 1px;
+    width: 100px;
+    font-weight: 700;
+    border: 1px solid #ed1c24;
+    border-radius: 5px;
+    text-align: center;
+    color: #ed1c24;
+}
+
+h2.mina-cv-title {
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.databaser {
+    display: none;
+}
