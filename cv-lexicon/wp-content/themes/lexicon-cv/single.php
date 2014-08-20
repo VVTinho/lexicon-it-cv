@@ -43,9 +43,9 @@
 
                             <?php endif; ?>
 
-    <?php the_field( "cv_name" ); ?><br />
-                          <?php the_field( "bith_date_cv" ); ?><br />
-                          <?php the_field( "language_cv" ); ?><br />
+                            <?php the_field( "cv_name" ); ?><br />
+                            <?php the_field( "bith_date_cv" ); ?><br />
+                            <?php the_field( "language_cv" ); ?><br />
                             <h2>Profil</h2>
                           <?php the_field( "desc_role_cv" ); ?>
 
@@ -129,8 +129,6 @@
 
                                 <?php endwhile; ?>
                             <?php endif; ?>
-
-                            <?php pdf24Plugin_link('Ladda ner ditt CV som pdf'); ?>
 
                             <script>
                                 if (window.print) {

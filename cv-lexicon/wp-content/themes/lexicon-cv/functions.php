@@ -1,15 +1,14 @@
 <?php
 
-/* Disable admin styles from front-end (no-confict) */
-add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
-
+// Disable admin styles from front-end (no-confict)
 function my_deregister_styles() {
 	wp_deregister_style( 'wp-admin' );
 }
+add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
 /* End */
 
 
-/* Hooks into a filter called ‘acf/pre_save_post’, creates a new post and returns the new post_id */
+// Hooks into a filter called ‘acf/pre_save_post’, creates a new post and returns the new post_id
 function my_pre_save_post( $post_id ) {
     // check if this is to be a new post
     if( $post_id != 'new' ) {
@@ -36,7 +35,7 @@ add_filter('acf/pre_save_post' , 'my_pre_save_post' );
 /* End */
 
 
-/* Remove and change footer admin copyright text */
+// Remove and change footer admin copyright text
 function remove_footer_admin () {
     echo '<span id="footer-thankyou">Copyright Lexicon-IT 2014</span>';
 }
@@ -44,7 +43,7 @@ add_filter('admin_footer_text', 'remove_footer_admin');
 /* End */
 
 
-/* Settings/style for login page */
+// Settings/style for login page
 function my_login_logo() { ?>
     <style type="text/css">
         body.login div#login h1 a {
@@ -86,21 +85,6 @@ $subscriber->add_cap('edit_posts');
 $subscriber->add_cap('publish_posts');
 $subscriber->add_cap('delete_posts');
 $subscriber->add_cap('read');
-
-
-function remove_admin_menu_items() {
-    $remove_menu_items = array( __('Comments'), __('Tools'), __('Panel'), __('Media'), __('Posts') );
-    global $menu;
-    end ($menu);
-    while (prev($menu)) {
-        $item = explode(' ',$menu[key($menu)][0]);
-        if(in_array($item[0] != NULL?$item[0]:"" , $remove_menu_items)) {
-            unset($menu[key($menu)]);
-        }
-    }
-}
-add_action( 'admin_menu', 'remove_admin_menu_items' );
-/* End */
 
 
 // Remove admin bar links
@@ -212,8 +196,9 @@ function change_css_on_post_page() {
         <?php
     }
 }
-add_action('wp_head', 'change_css_on_post_page');
+add_action( 'wp_head', 'change_css_on_post_page' );
 /* End */
+
 
 /* Force perfect jpg images */
 function jpeg_quality() {
@@ -223,7 +208,7 @@ add_filter( 'jpeg_quality', 'jpeg_quality' );
 /* End */
 
 
-/* Link to page 'Min Sida' in wp admin bar */
+/* Link to page 'Min Sida' in wp admin toolbar */
 function toolbar_link_to_min_sida( $wp_admin_bar ) {
     $args = array(
         'id'    => 'min-sida',
@@ -237,6 +222,37 @@ add_action( 'admin_bar_menu', 'toolbar_link_to_min_sida', 999 );
 /* End */
 
 
+function remove_admin_menu_items() {
+    $remove_menu_items = array( __('Comments'), __('Tools'), __('Panel'), __('Media'), __('Posts') );
+    global $menu;
+    end ($menu);
+    while (prev($menu)) {
+        $item = explode(' ',$menu[key($menu)][0]);
+        if(in_array($item[0] != NULL?$item[0]:"" , $remove_menu_items)) {
+            unset($menu[key($menu)]);
+        }
+    }
+}
+add_action( 'admin_menu', 'remove_admin_menu_items' );
+/* End */
+
+
+/* Link to page 'Min Sida' in wp admin bar menu */
+function custom_admin_menu_new_items() {
+    global $menu;
+    add_menu_page( 'Min Sida', 'Min Sida', 'manage_options', 'min-sida', '','', 6 );
+    foreach($menu as $mIndex => $mData) {
+        if($mData[2] == 'min-sida') {
+            $menu[$mIndex][2] = 'http://vvt-mediadesign.se/cv-lexicon/min-sida/';
+            break;
+        }
+    }
+}
+add_action( 'admin_menu' , 'custom_admin_menu_new_items' );
+/* End */
+
+
+// Remove help tab in the Admin panel */
 function remove_help_tabs( $old_help, $screen_id, $screen ) {
     $screen->remove_help_tabs();
     return $old_help;
@@ -244,6 +260,8 @@ function remove_help_tabs( $old_help, $screen_id, $screen ) {
 add_filter( 'contextual_help', 'remove_help_tabs', 999, 3 );
 /* End */
 
+
+// Remove color scheme picker in the Admin panel */
 remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
 /* End */
 
@@ -260,3 +278,45 @@ function hide_personal_options() {
     <?php
 }
 add_action( 'admin_head','hide_personal_options' );
+
+
+// Remove widgets on dashboard page
+function remove_dashboard_widgets() {
+    global $wp_meta_boxes;
+
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+
+}
+add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
+/* End */
+
+
+function neat_body_class( $classes ) {
+     if ( is_single() || is_tag('neat') )
+          $classes[] = 'neat-stuff';
+     return $classes;
+}
+add_filter( 'body_class', 'neat_body_class' );
+
+
+function edit_body_class_page( $classes ) {
+     if ( is_page(183) || is_tag('edit') )
+          $classes[] = 'edit-cvs';
+     return $classes;
+}
+add_filter( 'body_class', 'edit_body_class_page' );
+
+
+// Disable The “Please Update Now” Message On WordPress Dashboard
+if (!current_user_can('edit_users')) {
+    add_action( 'init', create_function( '$a', "remove_action( 'init', 'wp_version_check' );" ), 2 );
+    add_filter( 'pre_option_update_core', create_function( '$a', "return null;" ) );
+}
+/* End */

@@ -34,22 +34,50 @@
     <script>
     	jQuery(document).ready(function() {
         jQuery("#show-view-cv").click(function() {
-        jQuery(".single-post .view-cv-form").hide();
-        jQuery(".single-post .view-cv").show();
+          jQuery(".single-post .view-cv-form").hide();
+          jQuery(".single-post .view-cv").show();
         });
         jQuery("#hide-view-cv").click(function() {
-        jQuery(".single-post .view-cv-form").show();
-        jQuery(".single-post .view-cv").hide();
+          jQuery(".single-post .view-cv-form").show();
+          jQuery(".single-post .view-cv").hide();
         });
         jQuery("#hide-cv-form").click(function() {
-        jQuery(".page-template-mina-cv-php .acf-form").hide();
-        jQuery(".page-template-mina-cv-php .close-btn").hide();
-        jQuery(".page-template-mina-cv-php #show-cv").show();
+          jQuery(".page-template-mina-cv-php .acf-form").hide();
+          jQuery(".page-template-mina-cv-php .close-btn").hide();
+          jQuery(".page-template-mina-cv-php #show-cv").show();
         });
         jQuery("#show-cv").click(function() {
-        jQuery(".page-template-mina-cv-php .acf-form").show();
-        jQuery(".page-template-mina-cv-php .close-btn").show();
-        jQuery(".page-template-mina-cv-php #show-cv").hide();
+          jQuery(".page-template-mina-cv-php .acf-form").show();
+          jQuery(".page-template-mina-cv-php .close-btn").show();
+          jQuery(".page-template-mina-cv-php #show-cv").hide();
+        });
+
+        // jQuery("a").click(function() {
+        //   jQuery(this).addClass("km-state-active");
+        // });
+
+        // jQuery("a").on('click', function() {
+        //    jQuery(this).addClass("km-state-active").attr('href', '<?php the_permalink(); ?>');
+        // });
+
+        // jQuery(function() {
+        //   jQuery('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+        // });
+
+        // jQuery("#show-view-cv1").click(function() {
+        //   jQuery('body').addClass('preview-my-cv');
+        //   jQuery(".preview-my-cv.single-post.view-cv").show();
+
+        //   // jQuery(".page-template-mina-cv-php #show-cv").show();
+        //   // jQuery(".page-template-mina-cv-php .acf-form").show();
+        //   // jQuery(".view-cv").show();
+        //   // window.location.href = "http://www.vvt-mediadesign.se";
+        //   //jQuery("preview-my-cv'.single-post .view-cv-form").show();
+        //   // jQuery(".single-post .view-cv").hide();
+        // });
+
+        jQuery(".welcome-text-btn").click(function()  {
+            jQuery(".welcome-text").remove();
         });
       });
     </script>
@@ -102,8 +130,8 @@
                         	<span><?php global $current_user;
                       			get_currentuserinfo();
                       			echo $current_user->user_login;?>
-                            </span>
-                         </li>
+                          </span>
+                        </li>
                          <?php } ?>
                          <li><?php wp_loginout(); ?></li>
 					</ul>

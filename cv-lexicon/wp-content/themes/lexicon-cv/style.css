@@ -150,7 +150,7 @@ input[type="submit"]:hover {
 .acf_postbox p.label label {
     color: #333333;
     display: block;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
     line-height: 1.5em;
     margin: 0 0 3px;
@@ -191,7 +191,7 @@ input[type="submit"]:hover {
 	text-align: center;
 }
 .field {
-	text-align: right;
+	/*text-align: right;*/
 }
 .field.field_type-text,
 .field.field_type-repeater,
@@ -211,7 +211,7 @@ input[type="submit"]:hover {
 /* = Single - view/edit CV
 -------------------------------------------------------------- */
 .single-post .view-cv {
-	display: none;
+	/* display: none; */
 }
 .single-post .view-cv-form {
 
@@ -224,6 +224,33 @@ button.view-cv-btn {
 }
 .single-post button.view-cv-btn {
 	display: block;
+}
+
+/*.preview-my-cv {
+
+}*/
+
+.neat-stuff.single-post .view-cv-form {
+    display: none;
+}
+
+.page-template-edit-cv-page-php {
+
+}
+
+.view-cv1 {
+
+}
+
+.view-cv-form1 {
+
+}
+
+.edit-cvs.page .view-cv-form1  {
+}
+
+.page .view-cv-form1 {
+
 }
 
 /* = Header
@@ -444,10 +471,9 @@ button.view-cv-btn {
 
 }
 
-.radera-cv {
+.delete-cv {
     display: block;
-    font-size: 16px;
-    height: 23px;
+    height: 20px;
     letter-spacing: 1px;
     width: 100px;
     font-weight: 700;
@@ -455,6 +481,53 @@ button.view-cv-btn {
     border-radius: 5px;
     text-align: center;
     color: #ed1c24;
+    font-size: 14px;
+    float: right;
+    margin-left: 10px;
+}
+
+.edit-cv {
+    display: block;
+    height: 20px;
+    letter-spacing: 1px;
+    width: 100px;
+    font-weight: 700;
+    border: 1px solid #ed1c24;
+    border-radius: 5px;
+    text-align: center;
+    color: #ed1c24;
+    font-size: 14px;
+    float: right;
+    margin-left: 10px;
+}
+
+.preview-cv {
+    display: block;
+    height: 20px;
+    letter-spacing: 1px;
+    width: 100px;
+    font-weight: 700;
+    border: 1px solid #ed1c24;
+    border-radius: 5px;
+    text-align: center;
+    color: #ed1c24;
+    font-size: 14px;
+    float: right;
+}
+
+.close-preview-cv {
+    display: block;
+    height: 20px;
+    letter-spacing: 1px;
+    width: 100px;
+    font-weight: 700;
+    border: 1px solid #ed1c24;
+    border-radius: 5px;
+    text-align: center;
+    color: #ed1c24;
+    font-size: 14px;
+    float: left;
+    margin-left: 10px;
 }
 
 h2.mina-cv-title {
@@ -466,4 +539,169 @@ h2.mina-cv-title {
 
 .databaser {
     display: none;
+}
+
+.post-cv {
+    border: 1px solid #a1a1a1;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.print-cv {
+    float: right;
+}
+
+.edit-delete-preview-btn {
+    float: left;
+    float: left;
+    position: relative;
+    bottom: 10px;
+}
+
+.preview-cv-btn {
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#show-cv {
+
+}
+
+.add-cv-btn {
+    margin-top: 40px;
+}
+
+.welcome-text {
+    font-size: 16px;
+}
+
+#welcome-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.welcome-text-btn {
+    float: right;
+}
+
+.daily_goal_activity li {
+    display: none;
+}
+.daily_goal_activity li.current {
+    display: block;
+}
+
+.created-cv-time {
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Ifyllningsformuläret */
+
+#acf-cv_name {
+
+}
+
+#acf-last_name_cv {
+
+}
+
+#acf-first_name_cv {
+
+}
+
+#acf-bith_date_cv {
+    width: 320px;
+}
+
+#acf-language_cv {
+
+}
+
+#acf-available_from_cv {
+
+}
+
+#acf-desc_role_cv {
+
+}
+
+#acf-available_from_cv {
+
+}
+
+#acf-image_cv {
+
+}
+
+#acf-database_repeater_cv p.label {
+    display: none;
+}
+
+#acf-tools_repeater_cv p.label {
+    display: none;
+}
+
+#acf-methods_repeater_cv p.label {
+    display: none;
+}
+
+#acf-os_repeater_cv p.label {
+    display: none;
+}
+
+/* background color for label Från */
+table.acf_input tbody tr td.label {
+    background: #ffffff;
+}
+
+/* background color for repeater field numbers */
+.repeater > table > tbody > tr > td.order {
+    background: #ffffff;
+}
+
+/* background color for table remove/add hover buttons */
+.repeater > table > tbody > tr > td.remove {
+    background: #ffffff;
+}
+
+.acf_postbox p.label label {
+
+}
+
+ul.acf-radio-list, ul.acf-checkbox-list {
+    display: inline-flex;
+    list-style-type: none;
+}
+
+ul.acf-radio-list, li label {
+    margin-right: 40px;
+    /* padding-left: 20px; */
+}
+
+/* drop down menyn i formuläret */
+.acf_postbox .field select {
+    width: 61%;
+}
+
+/* Se CV Test */
+.preview-my-cv.view-cv-form {
+    display: none;
+}
+
+/* Print Style Sheet */
+@media print {
+    body { background:white; color:black; margin:0 }
+    #header { }
+    #content { }
+    #comments { }
+    #sidebar { }
+    #footer { }
+    .mina-cv-title {
+        display: none;
+    }
+    .welcome-text {
+       display: none;
+    }
 }
