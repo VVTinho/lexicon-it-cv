@@ -10,7 +10,6 @@
 
 @import url(../twentyfourteen/style.css);
 
-
 /* = General layout
 -------------------------------------------------------------- */
 body {
@@ -124,6 +123,8 @@ button:hover span,
 button.close-btn {
 	cursor: pointer;
 	color: #231f20;
+    position: relative;
+    bottom: 20px;
 }
 button.close-btn:hover {
 
@@ -143,6 +144,12 @@ input[type="submit"]:hover {
 
 /* = Mitt CV
 -------------------------------------------------------------- */
+
+.acf_postbox .field {
+    position: relative;
+    color: #333333;
+    clear: both;
+}
 
 .acf_postbox p.label {
     color: #ed1c24;
@@ -225,10 +232,6 @@ button.view-cv-btn {
 .single-post button.view-cv-btn {
 	display: block;
 }
-
-/*.preview-my-cv {
-
-}*/
 
 .neat-stuff.single-post .view-cv-form {
     display: none;
@@ -474,45 +477,63 @@ button.view-cv-btn {
 .delete-cv {
     display: block;
     height: 20px;
-    letter-spacing: 1px;
-    width: 100px;
-    font-weight: 700;
+    width: 94px;
+    font-weight: 500;
     border: 1px solid #ed1c24;
-    border-radius: 5px;
+    border-radius: 4px;
     text-align: center;
-    color: #ed1c24;
     font-size: 14px;
     float: right;
     margin-left: 10px;
+}
+
+.delete-cv a {
+    color: #231f20;
+}
+
+.delete-cv a:hover {
+    font-weight: 700;
 }
 
 .edit-cv {
     display: block;
     height: 20px;
-    letter-spacing: 1px;
-    width: 100px;
-    font-weight: 700;
+    width: 94px;
+    font-weight: 500;
     border: 1px solid #ed1c24;
-    border-radius: 5px;
+    border-radius: 4px;
     text-align: center;
-    color: #ed1c24;
     font-size: 14px;
     float: right;
     margin-left: 10px;
 }
 
+.edit-cv a {
+    color: #231f20;
+}
+
+.edit-cv a:hover {
+    font-weight: 700;
+}
+
 .preview-cv {
     display: block;
     height: 20px;
-    letter-spacing: 1px;
-    width: 100px;
-    font-weight: 700;
+    width: 94px;
+    font-weight: 500;
     border: 1px solid #ed1c24;
-    border-radius: 5px;
+    border-radius: 4px;
     text-align: center;
-    color: #ed1c24;
     font-size: 14px;
     float: right;
+}
+
+.preview-cv a {
+    color: #231f20;
+}
+
+.preview-cv a:hover {
+    font-weight: 700;
 }
 
 .close-preview-cv {
@@ -593,30 +614,121 @@ h2.mina-cv-title {
 }
 
 .created-cv-time {
-    font-size: 14px;
+    font-size: 12px;
     font-style: italic;
 }
 
-/* Ifyllningsformuläret */
+/* background color for label Från */
+table.acf_input tbody tr td.label {
+    background: #ffffff;
+}
 
-#acf-cv_name {
+/* background color for repeater field numbers */
+.repeater > table > tbody > tr > td.order {
+    background: #ffffff;
+}
+
+/* background color for table remove/add hover buttons */
+.repeater > table > tbody > tr > td.remove {
+    background: #ffffff;
+}
+
+ul.acf-radio-list, ul.acf-checkbox-list {
+    display: inline-flex;
+    list-style-type: none;
+}
+
+ul.acf-radio-list, li label {
+    margin-right: 40px;
+}
+
+.hr-between-posts {
+    margin-top: 60px;
+    width: 308px;
+    border: 0;
+    height: 6px;
+    box-shadow: inset 0 8px 10px -20px rgba(0,0,0,0.5);
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+
+.hr-between-posts:after {
+    content: "°";
+    display: inline-block;
+    position: relative;
+    top: -0.56em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}
+
+/* Preview CV / Se CV */
+.preview-cv-logo {
+    float: right;
+    margin-top: 30px;
+}
+
+.first-last-name-cv {
+    font-size: 24px;
+    font-family: helvetica;
+}
+
+#first-last-name-cv {
 
 }
 
-#acf-last_name_cv {
+.profile-img {
+    margin-top: 10px;
+}
+
+.view-cv {
+    margin-top: 20px;
+}
+
+/* drop down menyn i formuläret */
+.acf_postbox .field select {
+    width: 61%;
+}
+
+/* Se CV  */
+.preview-my-cv.view-cv-form {
+    display: none;
+}
+
+.acf-field-first_name_cv {
+
+}
+
+#acf-field-first_name_cv {
 
 }
 
 #acf-first_name_cv {
+    float: left;
+}
 
+#acf-cv_name {
+    float: left;
+    width: 100%;
+}
+
+#acf-last_name_cv {
+    float: right;
+    clear: right;
 }
 
 #acf-bith_date_cv {
     width: 320px;
+    float: left;
 }
 
 #acf-language_cv {
-
+    float: right;
+    width: 320px;
+    clear: right;
 }
 
 #acf-available_from_cv {
@@ -650,50 +762,18 @@ h2.mina-cv-title {
 #acf-os_repeater_cv p.label {
     display: none;
 }
-
-/* background color for label Från */
-table.acf_input tbody tr td.label {
-    background: #ffffff;
-}
-
-/* background color for repeater field numbers */
-.repeater > table > tbody > tr > td.order {
-    background: #ffffff;
-}
-
-/* background color for table remove/add hover buttons */
-.repeater > table > tbody > tr > td.remove {
-    background: #ffffff;
-}
-
-.acf_postbox p.label label {
-
-}
-
-ul.acf-radio-list, ul.acf-checkbox-list {
-    display: inline-flex;
-    list-style-type: none;
-}
-
-ul.acf-radio-list, li label {
-    margin-right: 40px;
-    /* padding-left: 20px; */
-}
-
-/* drop down menyn i formuläret */
-.acf_postbox .field select {
-    width: 61%;
-}
-
-/* Se CV Test */
-.preview-my-cv.view-cv-form {
-    display: none;
-}
+/* End / Preview CV / Se CV */
 
 /* Print Style Sheet */
 @media print {
-    body { background:white; color:black; margin:0 }
-    #header { }
+    body {
+        background:white;
+        color:black;
+        margin:0
+    }
+    #header {
+        display: none;
+    }
     #content { }
     #comments { }
     #sidebar { }
@@ -703,5 +783,8 @@ ul.acf-radio-list, li label {
     }
     .welcome-text {
        display: none;
+    }
+    .print-preview-cv-btn {
+        display: none;
     }
 }

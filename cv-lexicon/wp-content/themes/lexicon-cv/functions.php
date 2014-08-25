@@ -47,14 +47,17 @@ add_filter('admin_footer_text', 'remove_footer_admin');
 function my_login_logo() { ?>
     <style type="text/css">
         body.login div#login h1 a {
-            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/cv-lexicon/images/site-login-logo.png);
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/site-login-logo.png);
             padding-bottom: 30px;
             background-size: 200px 101px;
             height: 101px;
             width: 100%;
         }
         body {
-          background: #ffffff;
+            background: #ed1c24;
+        }
+        html {
+            background: none repeat scroll 0 0 #ed1c24;
         }
     </style>
 <?php }
@@ -147,7 +150,6 @@ add_filter( 'posts_where', 'hide_attachments_wpquery_where' );
 function hide_admin_bar() {
     if ( is_page('6') ) {
         show_admin_bar(false);
-        //endif;
         ?>
             <style type="text/css">
                 .site-header {
@@ -200,7 +202,7 @@ add_action( 'wp_head', 'change_css_on_post_page' );
 /* End */
 
 
-/* Force perfect jpg images */
+// Force perfect jpg images
 function jpeg_quality() {
    return 100;
 }
@@ -208,7 +210,7 @@ add_filter( 'jpeg_quality', 'jpeg_quality' );
 /* End */
 
 
-/* Link to page 'Min Sida' in wp admin toolbar */
+// Link to page 'Min Sida' in wp admin toolbar
 function toolbar_link_to_min_sida( $wp_admin_bar ) {
     $args = array(
         'id'    => 'min-sida',
@@ -222,6 +224,7 @@ add_action( 'admin_bar_menu', 'toolbar_link_to_min_sida', 999 );
 /* End */
 
 
+// Remove Admin menu items
 function remove_admin_menu_items() {
     $remove_menu_items = array( __('Comments'), __('Tools'), __('Panel'), __('Media'), __('Posts') );
     global $menu;
@@ -237,7 +240,7 @@ add_action( 'admin_menu', 'remove_admin_menu_items' );
 /* End */
 
 
-/* Link to page 'Min Sida' in wp admin bar menu */
+// Link to page 'Min Sida' in wp admin bar menu
 function custom_admin_menu_new_items() {
     global $menu;
     add_menu_page( 'Min Sida', 'Min Sida', 'manage_options', 'min-sida', '','', 6 );
@@ -266,6 +269,7 @@ remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
 /* End */
 
 
+// Hide personal options in Admin panel
 function hide_personal_options() {
     ?>
         <script type="text/javascript">
@@ -278,6 +282,7 @@ function hide_personal_options() {
     <?php
 }
 add_action( 'admin_head','hide_personal_options' );
+/* End */
 
 
 // Remove widgets on dashboard page
@@ -298,20 +303,24 @@ add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
 /* End */
 
 
+// Add Class to the Body
 function neat_body_class( $classes ) {
      if ( is_single() || is_tag('neat') )
           $classes[] = 'neat-stuff';
      return $classes;
 }
 add_filter( 'body_class', 'neat_body_class' );
+/* End */
 
 
+// Add Class to the Body
 function edit_body_class_page( $classes ) {
      if ( is_page(183) || is_tag('edit') )
           $classes[] = 'edit-cvs';
      return $classes;
 }
 add_filter( 'body_class', 'edit_body_class_page' );
+/* End */
 
 
 // Disable The “Please Update Now” Message On WordPress Dashboard

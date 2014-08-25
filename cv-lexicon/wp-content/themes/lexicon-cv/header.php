@@ -51,33 +51,8 @@
           jQuery(".page-template-mina-cv-php .close-btn").show();
           jQuery(".page-template-mina-cv-php #show-cv").hide();
         });
-
-        // jQuery("a").click(function() {
-        //   jQuery(this).addClass("km-state-active");
-        // });
-
-        // jQuery("a").on('click', function() {
-        //    jQuery(this).addClass("km-state-active").attr('href', '<?php the_permalink(); ?>');
-        // });
-
-        // jQuery(function() {
-        //   jQuery('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
-        // });
-
-        // jQuery("#show-view-cv1").click(function() {
-        //   jQuery('body').addClass('preview-my-cv');
-        //   jQuery(".preview-my-cv.single-post.view-cv").show();
-
-        //   // jQuery(".page-template-mina-cv-php #show-cv").show();
-        //   // jQuery(".page-template-mina-cv-php .acf-form").show();
-        //   // jQuery(".view-cv").show();
-        //   // window.location.href = "http://www.vvt-mediadesign.se";
-        //   //jQuery("preview-my-cv'.single-post .view-cv-form").show();
-        //   // jQuery(".single-post .view-cv").hide();
-        // });
-
         jQuery(".welcome-text-btn").click(function()  {
-            jQuery(".welcome-text").remove();
+            jQuery(".welcome-text").slideUp('slow');
         });
       });
     </script>

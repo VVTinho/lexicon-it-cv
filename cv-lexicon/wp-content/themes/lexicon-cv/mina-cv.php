@@ -40,7 +40,7 @@
                         <?php while( $author_pages->have_posts() ) : $author_pages->the_post(); ?>
 
                             <div class="preview-cv-btn">
-                                <?php the_title(); ?>
+                                <a class="" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </div>
 
                             <div class="created-cv-time">
@@ -48,43 +48,18 @@
                             </div>
 
                             <div class="edit-delete-preview-btn">
-                                <div class="edit-cv">
-
-                                   <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Redigera CV</a>
-
-                                   <!--  <img src="http://vvt-mediadesign.se/cv-lexicon/wp-content/uploads/2014/08/edit-icon.png" alt="Redigera CV" width="36" height="36"> -->
-
-                                   <!--  <a class="" id="show-view-cv-editmode" href="http://vvt-mediadesign.se/cv-lexicon/edit-cv/">Redigera CV</a> -->
-
-                                    <!-- <a href="<?php the_permalink(); #anchor_id ?>">clickable text</a> -->
-                                </div>
-
                                 <div class="delete-cv">
                                     <a onclick="return confirm('Är du säker du vill radera detta CV?')" href="<?php echo get_delete_post_link( $post->ID ) ?>">Ta bort CV</a>
-                                   <!--  <img src="http://vvt-mediadesign.se/cv-lexicon/wp-content/uploads/2014/08/btn_delete.png" alt="Radera CV" width="36" height="36"> -->
                                 </div>
-
+                                <div class="edit-cv">
+                                    <a href="<?php the_permalink(); ?>?edit=1" title="<?php the_title_attribute(); ?>">Redigera CV</a>
+                                </div>
                                 <div class="preview-cv">
-                                   <!--  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Visa CV</a> -->
-
-                                    <!--  <img src="http://vvt-mediadesign.se/cv-lexicon/wp-content/uploads/2014/08/edit-icon.png" alt="Redigera CV" width="36" height="36"> -->
-                                    <!-- <button class="view-cv-btn1" id="show-view-cv1">Visa CV</button> -->
-                                    <!-- <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="view-cv-btn1" id="show-view-cv1">Visa CV</a> -->
-                                    <!-- <button class="view-cv-btn" id="show-view-cv">Se</button> -->
-
-                                    <!--  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="view-cv-btn" id="show-view-cv1">Se CV</a> -->
-
-                                    <!-- <a href="<?php body_class( 'class-name' ); ?>" title="<?php the_title_attribute(); ?>" class="view-cv-btn" id="show-view-cv1">Se CV</a> -->
-
                                     <a class="" id="show-view-cv1" href="<?php the_permalink(); ?>">Se CV</a>
-
-                                    <!-- <input id="btnID" type="button" value="button" /> -->
-
-                                    <!-- <a class="favIcon km-icon" href="#" data-rel="external">Fav</a> -->
-
                                 </div>
-
                             </div>
+
+                            <div class="hr-between-posts"></div>
 
                             <?php
                                 if ($post->post_author == $current_user->ID) {}

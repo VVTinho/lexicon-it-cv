@@ -12,19 +12,33 @@
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
         	<?php if ( is_user_logged_in() ): ?>
-				<?php
-                    // Start the Loop.
-                    while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-                        <div class="view-cv-form">
+                        <?php
+                            $form_show = $prev_show = "";
+
+                            if($_GET['edit']) {
+                                $form_show = ' style="display:block !important";';
+                                $prev_show = ' style="display:none !important";';
+                            }
+                        ?>
+
+                        <div class="view-cv-form" <?php echo $form_show ; ?> >
                             <?php acf_form(); ?>
                         </div>
 
-                        <div class="view-cv">
+                        <div class="view-cv" <?php echo $prev_show ; ?> >
                             <button class="close-btn" id="hide-view-cv">Stäng</button>
-                            <br />
 
-                            <?php the_field( "first_name_cv" ); ?>  <?php the_field( "last_name_cv" ); ?><br />
+                            <div class="preview-cv-logo">
+                                <img src="/cv-lexicon/wp-content/uploads/2014/08/logo_lexiconitkonsult.png" alt="Lexicon-IT" width="132" height="72">
+                            </div>
+
+                            <div class="first-last-name-cv" id="first-last-name-cv">
+                                <?php the_field( "first_name_cv" ); ?>
+                                <?php the_field( "last_name_cv" ); ?>
+                            </div>
+
                             <?php if( get_field('image_cv') ): ?>
                                 <div class="profile-img">
                                     <?php
@@ -130,11 +144,13 @@
                                 <?php endwhile; ?>
                             <?php endif; ?>
 
-                            <script>
-                                if (window.print) {
-                                    document.write('<form><input type=button name=print value="Skriv Ut CV" onClick="window.print()"></form>');
-                                }
-                            </script>
+                            <div class="print-preview-cv-btn">
+                                <script>
+                                    if (window.print) {
+                                        document.write('<form><input type=button name=print value="Skriv Ut CV" onClick="window.print()"></form>');
+                                    }
+                                </script>
+                            </div>
 
                         </div>
 

@@ -23,9 +23,9 @@ get_header(); ?>
 					while ( have_posts() ) : the_post(); ?>
 
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                        
+
                             <header class="entry-header">
-                                
+
                         		<?php
                                     if ( is_single() ) :
                                         the_title( '<h1 class="entry-title">', '</h1>' );
@@ -33,16 +33,16 @@ get_header(); ?>
                                         the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
                                     endif;
                                 ?>
-                        
+
                                 <div class="entry-meta">
                                     <?php
                                         if ( 'post' == get_post_type() )
                                             twentyfourteen_posted_on();
-                        
+
                                     ?>
                                 </div><!-- .entry-meta -->
                             </header><!-- .entry-header -->
-                        
+
                             <?php if ( is_search() ) : ?>
                             <div class="entry-summary">
                                 <?php the_excerpt(); ?>
@@ -60,7 +60,7 @@ get_header(); ?>
                                 ?>
                             </div><!-- .entry-content -->
                             <?php endif; ?>
-                        
+
                             <?php the_tags( '<footer class="entry-meta"><span class="tag-links">', '', '</span></footer>' ); ?>
                         </article><!-- #post-## -->
 
